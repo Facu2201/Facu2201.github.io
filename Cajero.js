@@ -12,20 +12,21 @@ class Billete
   {
     document.body.appendChild(this.imagen);
   }
-};
+}
 
 var sonidos  =
 {
   tecla: document.getElementById("tecla_id"),
   alerta: document.getElementById("alerta_id"),
   entrega: document.getElementById("entrega_id"),
-};
+}
 
 var imagenes = [];
 imagenes[100] = "100.png";
 imagenes[50] = "50.png";
 imagenes[20] = "20.png";
 imagenes[10] = "10.png";
+
 var caja = [];
 caja.push(new Billete(100, 5));
 caja.push(new Billete(50, 4));
@@ -42,7 +43,7 @@ var dinero;
 var dinero_disponible = 0;
 var entregado = [];
 
-//EVENTOS Y FUNCIONES
+// OTROS EVENTOS Y FUNCIONES
 contador();
 
 boton_extraccion.addEventListener("click", insertarDinero);
@@ -52,7 +53,7 @@ document.addEventListener("keydown", sonido_tecla);
 function sonido_tecla()
 {
   sonidos.tecla.play();
-};
+}
 
 function contador() //dinero total de  la caja
 {
@@ -60,14 +61,14 @@ function contador() //dinero total de  la caja
   {
     dinero_disponible = dinero_disponible + (v.valor * v.cantidad);
   }
-};
+}
 
 function insertarDinero()
 {
   entregado.splice(0, entregado.length); //Reseteo el array entregado
   dinero = parseInt(pantalla.value);
   compatibilidad();
-};
+}
 
 function compatibilidad() //solo tomará multiplos positivos de 10 y distintos de 0
 {
@@ -83,7 +84,7 @@ function compatibilidad() //solo tomará multiplos positivos de 10 y distintos d
     } else if (dinero == 0)
     {
       sonidos.alerta.play();
-      resultado.innerHTML = "Para que vienes a cajero?";
+      resultado.innerHTML = "Para que vienes al cajero?";
     } else if (dinero % 10 !== 0 && dinero > 0)
     {
       sonidos.alerta.play();
@@ -94,7 +95,7 @@ function compatibilidad() //solo tomará multiplos positivos de 10 y distintos d
       resultado.innerHTML = "No se pueden insertar valores negativos";
     }
   }
-};
+}
 
 function entregarDinero()
 {
@@ -120,14 +121,14 @@ function entregarDinero()
         entregado.push(new Billete(v.valor, papeles));
         v.cantidad = v.cantidad - div;
         check();
-      };
+      }
     }
-  };
-};
+  }
+}
 
-function check()
+function check() //VERIFICA SI LA SUMA ES VÁLIDA RESPECTO A LOS BILLETES DISPONIBLES
 {
-  if (dinero == 0)
+  if (dinero == 0)//ENTREGA EL DINERO
   {
     sonidos.entrega.play();
     carga.innerHTML += "<br /> Usted retiró: <br />";
@@ -136,12 +137,12 @@ function check()
       resultado.innerHTML = "Retire su dinero abajo ↓";
       for (var i = 0; i < e.cantidad; i++)
       {
-        carga.innerHTML += "<img src=" + e.imagen.src + " />";;
-      };
+        carga.innerHTML += "<img src=" + e.imagen.src + " />";
+      }
     }
   } else
   {
     sonidos.alerta.play();
     resultado.innerHTML = "No tenemos los billetes para esa suma";
   }
-};
+}
