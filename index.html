@@ -6,8 +6,7 @@
     <style>
       body
       {
-        background-image: url(imagen/145.png);
-        background-repeat: no-repeat;
+        background-color: #7e7e7e;
       }
       h1
       {
@@ -26,28 +25,26 @@
       }
       .Contenidos
       {
-        padding-left: 510px;
-        object-position: center;
-        text-align: center;
+        padding-left: 390px;
         position: absolute;
         top: 200px;
       }
       .boton
       {
+        position: absolute;
         width: 205px;
         height: 45px;
         font-family: monospace;
         color: #67ed3e;
-        text-align: left;
         font-size: 18px;
         font-weight: 900;
         background-color: #363636;
       }
       .display
       {
+        position: absolute;
         padding-left: 560px;
         text-align: center;
-        position: absolute;
         top: 470px;
         font-family: monospace;
         font-size: 20px;
@@ -55,35 +52,47 @@
       }
       .display2
       {
-        padding-left: 230px;
-        padding-top: 1170px;
+        position: absolute;
+        padding-left: 0px;
         font-family: monospace;
         font-size: 20px;
         color: white;
         overflow: scroll;
       }
+      .fondo
+      {
+        position: relative;
+        margin: auto;
+        width: 1060px;
+      }
     </style>
   </head>
   <body>
-    <div class="Contenidos">
-      <p class= "datos">
-        <h1><strong>Ingrese el monto deseado</strong></h1>
-        <input class="texto" type="text" id="pantalla_texto" /><br />
-        <br /><input type="button" value="REALIZAR EXTRACCIÓN" class="boton" id="botonExtraccion" />
-      </p>
-    </div>
+    <div class="fondo">
 
-    <audio src="sonido/tecla.mp3" id="tecla_id"></audio>
-    <audio src="sonido/alerta.mp3" id="alerta_id"></audio>
-    <audio src="sonido/entrega.mp3" id="entrega_id"></audio>
+      <img class="fondoImg" src="imagen/142.png"></img>
 
-    <div class="display">
-      <p id="resultado">
-      </p>
-    </div>
-    <div class="display2" >
-      <p id="carga_id">
-      </p>
+      <div class="Contenidos">
+        <p class= "datos">
+          <h1><strong>Ingrese el monto deseado</strong></h1>
+          <input class="texto" type="text" id="pantalla_texto" /><br />
+          <br /><input type="button" value="REALIZAR EXTRACCIÓN" class="boton" id="botonExtraccion" />
+        </p>
+      </div>
+
+      <audio src="sonido/tecla.mp3" id="tecla_id"></audio>
+      <audio src="sonido/alerta.mp3" id="alerta_id"></audio>
+      <audio src="sonido/entrega.mp3" id="entrega_id"></audio>
+
+      <div class="display">
+        <p id="resultado">
+        </p>
+      </div>
+
+      <div class="display2" >
+        <p id="carga_id">
+        </p>
+      </div>
     </div>
     <script type="text/javascript" src="Cajero.js"></script>
   </body>
