@@ -12,7 +12,6 @@
       {
         color: #e0e0e0;
         font-family: inherit;
-        padding-top: 450;
       }
       .texto
       {
@@ -55,11 +54,10 @@
       .display2
       {
         position: absolute;
-        padding-left: 0px;
+        padding-left: 10px;
         font-family: monospace;
         font-size: 20px;
         color: white;
-        overflow: scroll;
       }
       .fondo
       {
@@ -70,8 +68,11 @@
     </style>
   </head>
   <body>
-    <div class="fondo">
+    <audio src="sonido/tecla.mp3" id="tecla_id"></audio>
+    <audio src="sonido/alerta.mp3" id="alerta_id"></audio>
+    <audio src="sonido/entrega.mp3" id="entrega_id"></audio>
 
+    <div class="fondo">
       <img class="fondoImg" src="imagen/142.png"></img>
 
       <div class="Contenidos">
@@ -81,10 +82,6 @@
           <br /><input type="button" value="REALIZAR EXTRACCIÓN" class="boton" id="botonExtraccion" />
         </p>
       </div>
-
-      <audio src="sonido/tecla.mp3" id="tecla_id"></audio>
-      <audio src="sonido/alerta.mp3" id="alerta_id"></audio>
-      <audio src="sonido/entrega.mp3" id="entrega_id"></audio>
 
       <div class="display">
         <p id="resultado">
